@@ -22,12 +22,50 @@ i {
 
 .fruitMachine {
     width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.outline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 75px;
+    width: 600px;
+    min-width: 600px;
+}
+
+.middleSlotBorder {
+    position: absolute;
+    width: 33%;
+    height: 100%;
+    border: 2px solid #fff;
+    height: 80%;
+    border-radius: 25%;
+    
+    box-shadow:
+    /* White glow */
+    0 0 8px #fff,
+    inset 0 0 8px #fff,
+    0 0 15px #fff,
+    inset 0 0 15px #fff,
+    /* Purple glow */
+    0 0 10px #800080,
+    inset 0 0 10px #800080,
+    0 0 18px #800080,
+    inset  0 0 18px #800080,
+    0 0 24px #800080,
+    inset 0 0 24px #800080;
 }
 
 .display {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 5%;
 }
 
 .innerDisplay {
