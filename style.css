@@ -139,10 +139,6 @@ button {
     cursor: pointer;
 }
 
-.spin {
-    display: none;
-}
-
 .scores {
     padding: 20px 0px 0px 50px;
     flex-direction: column;
