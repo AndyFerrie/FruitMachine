@@ -1,4 +1,5 @@
 /* Font - font-family: 'Neonderthaw', cursive; */
+/* font-family: 'Bebas Neue', cursive; */
 
 :root {
     --neon-glow-purple: 
@@ -37,14 +38,22 @@ body {
     background-color: black;
     flex-direction: column;
     color: #fff;
+    font-family: 'Bebas Neue', cursive;
 }
 
 h1 {
     font-family: 'Neonderthaw', cursive;
-    font-size: 6rem;
-    margin: 0;
-    
+    font-size: 4.5rem;
+    margin: 0px 0px 20px 0px;
     text-shadow: var(--neon-glow-purple);
+}
+
+h3 {
+    color:#fff;
+    /* text-shadow: var(--neon-glow-purple); */
+    text-align: center;
+    font-size: 2rem;
+    margin: 0px 0px 0px 10px;
 }
 
 i {
@@ -53,8 +62,11 @@ i {
     margin: 5px;
 }
 
+.main {
+    display: flex;
+}
+
 .fruitMachine {
-    width: 90vw;
     position: relative;
     flex-direction: column;
 }
@@ -120,8 +132,43 @@ button {
     height: 100px;
     border-radius: 25px;
     box-shadow: var(--neon-glow-purple); 
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3rem;
+    margin-top: 20px;
+    cursor: pointer;
 }
 
 .spin {
     display: none;
+}
+
+.scores {
+    padding: 20px 0px 0px 50px;
+    flex-direction: column;
+}
+
+.symbols {
+    display: flex;
+    align-items: center;
+}
+
+.symbols i {
+    font-size: 3rem;
+    text-shadow: none;
+}
+
+.points, .credit {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.points .current, .credit .current{
+    border: var(--white-border);
+    font-size: 2rem;
+    border-radius: 15px; 
+    text-shadow: var(--neon-glow-purple);
+    padding: 10px;
+    margin-left: 20px;
 }
