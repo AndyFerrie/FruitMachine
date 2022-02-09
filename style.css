@@ -1,5 +1,6 @@
-/* Font - font-family: 'Neonderthaw', cursive; */
-/* font-family: 'Bebas Neue', cursive; */
+/* Font - font-family: 'Neonderthaw', cursive;
+font-family: 'Bebas Neue', cursive; 
+font-family: 'Press Start 2P', cursive; */
 
 :root {
     --neon-glow-purple: 
@@ -166,9 +167,10 @@ button {
 
 .points .current, .credit .current{
     border: var(--white-border);
-    font-size: 2rem;
+    font-size: 1.5rem;
     border-radius: 15px; 
     text-shadow: var(--neon-glow-purple);
     padding: 10px;
     margin-left: 20px;
+    font-family: 'Press Start 2P', cursive;
 }
