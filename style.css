@@ -120,11 +120,6 @@ i {
     margin: 0px 15px;
 }
 
-.three {
-    display: flex;
-    flex-direction: column-reverse;
-}
-
 button {
     background: none;
     border: var(--white-border);
