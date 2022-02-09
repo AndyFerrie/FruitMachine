@@ -21,7 +21,7 @@
                 <div class="display fcc">
                     <div class="innerDisplay">
                         <div class="overlay"></div>
-                        <div class="slot one">
+                        <div id="slotOne" class="slot marqueeOne">
                             <i class="devicon-android-plain"></i>
                             <i class="devicon-github-original"></i>
                             <i class="devicon-html5-plain"></i>
@@ -30,7 +30,7 @@
                             <i class="devicon-android-plain"></i>
                             <i class="devicon-github-original"></i>
                         </div>
-                        <div class="slot two">
+                        <div id="slotTwo" class="slot marqueeTwo">
                             <i class="devicon-ruby-plain"></i>
                             <i class="devicon-html5-plain"></i>
                             <i class="devicon-github-original"></i>
@@ -39,7 +39,7 @@
                             <i class="devicon-ruby-plain"></i>
                             <i class="devicon-html5-plain"></i>
                         </div>
-                        <div class="slot three">
+                        <div id="slotThree" class="slot marqueeThree">
                             <i class="devicon-github-original"></i>
                             <i class="devicon-android-plain"></i>
                             <i class="devicon-ruby-plain"></i>
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="bottom fcc">
-                <button class="spin">Spin</button>
+                <button id="spinBtn" class="spin">Spin</button>
             </div>
         </div>
         <div class="scores fcc">
@@ -98,6 +98,9 @@
         </div>
     </div>
     
+    <audio id="spinFX" src="./Sounds/SpinFX.mp3"></audio>
+    <audio id="winFX" src="./Sounds/win.mp3"></audio>
+
     <script src="./script.js"></script>
     
 </body>
