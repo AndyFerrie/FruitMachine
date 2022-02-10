@@ -59,13 +59,28 @@ function reset(el) {
     void el.offsetWidth; // https://css-tricks.com/restart-css-animation/
 }
 
-// Animation 
+// Sound
+
+const spinFX = getElement('spinFX');
+const winFX = getElement('winFX');
+
+function playSpinFX() {
+    spinFX.play();
+}
+
+function playWinFX() {
+    setTimeout(function(){ 
+        winFX.play(); 
+        }, 4000)
+}
+
+
 
 // Click to spin
 
-
-
 function spin() {
+
+playSpinFX();
 
 const slotOne = getElement('slotOne');
 const slotTwo = getElement('slotTwo');
@@ -113,6 +128,10 @@ if (icon3 === 1) {
     downOne(slotThree)
 } else if (icon3 === 4) {
     upOne(slotThree)
+}
+
+if (icon1 === icon2 && icon1 === icon3) {
+    playWinFX();
 }
 
 }
