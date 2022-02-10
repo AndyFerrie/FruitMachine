@@ -164,6 +164,7 @@ button {
     padding: 10px;
     margin-left: 20px;
     font-family: 'Press Start 2P', cursive;
+    width: 100px;
 }
 
 
@@ -205,4 +206,10 @@ button {
     100% {
         transform: scale(2.3) translateY(-50%);
     }
+}
+
+/* Disable Spin Button */
+
+.disable {
+    pointer-events: none;
 }

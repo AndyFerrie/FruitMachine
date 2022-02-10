@@ -68,19 +68,45 @@ function playSpinFX() {
     spinFX.play();
 }
 
+// Win plays after 4 second delay + disables spin button
+
 function playWinFX() {
     setTimeout(function(){ 
         winFX.play(); 
+        winDisable();
         }, 4000)
 }
 
+// Credit & Points
 
+var credit = 100;
+var points = 000;
+
+getElement('credit').innerText = credit;
+getElement('points').innerText = points;
+
+function creditCounter() {
+    credit -= 1;
+    getElement('credit').innerText = credit;
+}
+
+function winPoints(no) {
+    setTimeout(function(){ 
+        points += no;
+        getElement('points').innerText = points;
+        }, 4000)
+    
+}
 
 // Click to spin
 
 function spin() {
 
 playSpinFX();
+
+creditCounter();
+disable();
+
 
 const slotOne = getElement('slotOne');
 const slotTwo = getElement('slotTwo');
@@ -94,9 +120,9 @@ slotOne.classList.add('marqueeOne');
 slotTwo.classList.add('marqueeTwo');
 slotThree.classList.add('marqueeThree');
 
-const icon1 = getRandomNumber();
-const icon2 = getRandomNumber();
-const icon3 = getRandomNumber();
+const icon1 = 1 //getRandomNumber();
+const icon2 = 1 //getRandomNumber();
+const icon3 = 1 //getRandomNumber();
 
 console.log(icon1, icon2, icon3);
 
@@ -134,11 +160,40 @@ if (icon1 === icon2 && icon1 === icon3) {
     playWinFX();
 }
 
+if (icon1 === 1 && icon2 === 1 && icon3 === 1) {
+    winPoints(100);
+} else if (icon1 === 2 && icon2 === 2 && icon3 === 2) {
+    winPoints(200);
+} else if (icon1 === 3 && icon2 === 3 && icon3 === 3) {
+    winPoints(300);
+} else if (icon1 === 4 && icon2 === 4 && icon3 === 4) {
+    winPoints(400);
+} else if (icon1 === 5 && icon2 === 5 && icon3 === 5) {
+    winPoints(500);
 }
+}
+
+
 
 const spinBtn = getElement('spinBtn')
 
 spinBtn.addEventListener("click", spin);
+
+// Disable spin button temporarily 
+
+function disable() {
+    spinBtn.classList.add('disable');
+    setTimeout(function() {
+        spinBtn.classList.remove("disable");
+      }, 4000);
+}
+
+function winDisable() {
+    spinBtn.classList.add('disable');
+    setTimeout(function() {
+        spinBtn.classList.remove("disable");
+      }, 7000);
+}
 
 
 
