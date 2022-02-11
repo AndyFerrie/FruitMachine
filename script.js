@@ -68,19 +68,21 @@ function playSpinFX() {
     spinFX.play();
 }
 
-// Win plays after 4 second delay + disables spin button
+// Win FX plays after 4 second delay + disables spin button
 
-function playWinFX() {
+function win(el) {
     setTimeout(function(){ 
         winFX.play(); 
         winDisable();
-        }, 4000)
+        winAnimation(el);
+        removeWinAnimation(el);
+        }, 4101)
 }
 
 // Credit & Points
 
 var credit = 100;
-var points = 000;
+var points = 0;
 
 getElement('credit').innerText = credit;
 getElement('points').innerText = points;
@@ -90,12 +92,39 @@ function creditCounter() {
     getElement('credit').innerText = credit;
 }
 
+const counter = getElement('points');
+
+
 function winPoints(no) {
     setTimeout(function(){ 
+        var target = points + no;
+        var options = {
+            separator: ''
+        };
+        var c = new CountUp("points", points, target, 0, 7, options);
+        c.start();
         points += no;
-        getElement('points').innerText = points;
-        }, 4000)
-    
+        counter.innerText = points;
+        }, 4000)   
+}
+
+// Win animation
+
+const reactIcons = getElement('reactIcons');
+const rubyIcons = getElement('rubyIcons');
+const HTML5Icons = getElement('HTMLS5Icons');
+const androidIcons = getElement('androidIcons');
+const githubIcons = getElement('githubIcons');
+
+function winAnimation(el) {
+    el.classList.add("winAnimation"); 
+}
+
+function removeWinAnimation(el) {
+    setTimeout(function() {
+        el.classList.remove("winAnimation");
+        counter.classList.remove("winAnimation");
+      }, 7000);
 }
 
 // Click to spin
@@ -106,7 +135,6 @@ playSpinFX();
 
 creditCounter();
 disable();
-
 
 const slotOne = getElement('slotOne');
 const slotTwo = getElement('slotTwo');
@@ -120,11 +148,9 @@ slotOne.classList.add('marqueeOne');
 slotTwo.classList.add('marqueeTwo');
 slotThree.classList.add('marqueeThree');
 
-const icon1 = 1 //getRandomNumber();
-const icon2 = 1 //getRandomNumber();
-const icon3 = 1 //getRandomNumber();
-
-console.log(icon1, icon2, icon3);
+const icon1 = getRandomNumber();
+const icon2 = getRandomNumber();
+const icon3 = getRandomNumber();
 
 if (icon1 === 1) {
     upTwo(slotOne)
@@ -156,20 +182,21 @@ if (icon3 === 1) {
     upOne(slotThree)
 }
 
-if (icon1 === icon2 && icon1 === icon3) {
-    playWinFX();
-}
-
 if (icon1 === 1 && icon2 === 1 && icon3 === 1) {
     winPoints(100);
+    win(githubIcons);
 } else if (icon1 === 2 && icon2 === 2 && icon3 === 2) {
     winPoints(200);
+    win(androidIcons);
 } else if (icon1 === 3 && icon2 === 3 && icon3 === 3) {
     winPoints(300);
+    win(html5Icons);
 } else if (icon1 === 4 && icon2 === 4 && icon3 === 4) {
     winPoints(400);
+    win(rubyIcons);
 } else if (icon1 === 5 && icon2 === 5 && icon3 === 5) {
     winPoints(500);
+    win(reactIcons);
 }
 }
 
@@ -185,7 +212,7 @@ function disable() {
     spinBtn.classList.add('disable');
     setTimeout(function() {
         spinBtn.classList.remove("disable");
-      }, 4000);
+      }, 4100);
 }
 
 function winDisable() {

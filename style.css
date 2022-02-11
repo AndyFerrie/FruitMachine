@@ -213,3 +213,26 @@ button {
 .disable {
     pointer-events: none;
 }
+
+/* Spin button start animation */
+
+.startAnimation {
+    text-shadow: var(--neon-glow-purple);
+    animation: flashing-neon 1s linear 3;
+}
+
+/* Win animation */
+
+.winAnimation.neon i, .winAnimation.neon{
+    text-shadow: var(--neon-glow-purple);
+}
+
+.winAnimation {
+    animation: flashing-neon 0.5s linear 5;
+}
+
+@keyframes flashing-neon {
+    50% {
+        opacity: 0;
+    }
+}
