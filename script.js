@@ -110,12 +110,6 @@ function winPoints(no) {
 
 // Win animation
 
-const reactIcons = getElement('reactIcons');
-const rubyIcons = getElement('rubyIcons');
-const HTML5Icons = getElement('HTMLS5Icons');
-const androidIcons = getElement('androidIcons');
-const githubIcons = getElement('githubIcons');
-
 function winAnimation(el) {
     el.classList.add("winAnimation"); 
 }
@@ -135,10 +129,6 @@ playSpinFX();
 
 creditCounter();
 disable();
-
-const slotOne = getElement('slotOne');
-const slotTwo = getElement('slotTwo');
-const slotThree = getElement('slotThree');
 
 reset(slotOne);
 reset(slotTwo);
@@ -199,8 +189,6 @@ if (icon1 === 1 && icon2 === 1 && icon3 === 1) {
     win(reactIcons);
 }
 }
-
-
 
 const spinBtn = getElement('spinBtn')
 
