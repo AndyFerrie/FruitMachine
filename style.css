@@ -11,6 +11,13 @@ font-family: 'Press Start 2P', cursive; */
     0 0 6px #800080,
     0 0 12px #800080,
     0 0 20px #800080;
+    --neon-glow-purple2: 
+    /* White glow */
+    0 0 1px #fff,
+    /* Purple glow */
+    0 0 6px #800080,
+    0 0 12px #800080,
+    0 0 20px #800080;
     --neon-glow-purple-inset:
     /* White glow */
     0 0 8px #fff,
@@ -51,14 +58,13 @@ h1 {
 
 h3 {
     color:#fff;
-    /* text-shadow: var(--neon-glow-purple); */
     text-align: center;
     font-size: 2rem;
     margin: 0px 0px 0px 10px;
 }
 
 i {
-    text-shadow: var(--neon-glow-purple);
+    text-shadow: var(--neon-glow-purple2);
     font-size: 50px;
     margin: 5px;
 }
@@ -217,8 +223,8 @@ button {
 /* Spin button start animation */
 
 .startAnimation {
-    text-shadow: var(--neon-glow-purple);
-    animation: flashing-neon 1s linear 3;
+    text-shadow: var(--neon-glow-purple2);
+    animation: flashing-neon 1s linear 2;
 }
 
 /* Win animation */
@@ -228,11 +234,53 @@ button {
 }
 
 .winAnimation {
-    animation: flashing-neon 0.5s linear 5;
+    animation: flashing-neon 0.5s linear 3;
 }
 
 @keyframes flashing-neon {
     50% {
         opacity: 0;
+    }
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 900px) {
+    body {
+        height: 100%;
+    }
+    .main {
+        flex-direction: column-reverse;
+    }
+
+    .scores {
+        padding: 0;
+        flex-direction: column;
+    } 
+
+    .symbols {
+        margin: 15px 0px 0px 25px;
+    }
+
+    .symbols i {
+        font-size: 2.5rem;
+    } 
+
+    .iconsContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .pointsContainer {
+        display: flex;
+    }
+
+    button {
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        margin: 0;
     }
 }
