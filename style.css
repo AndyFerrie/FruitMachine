@@ -211,7 +211,7 @@ button {
     }
 
     100% {
-        transform: scale(2.3) translateY(-50%);
+        transform: scale(2.3) translateY(-28.5%);
     }
 }
 
