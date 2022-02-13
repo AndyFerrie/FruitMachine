@@ -194,15 +194,15 @@ button {
 }
 
 .marqueeOne {
-    animation: marquee-vertical .2s linear 13;
+    animation: marquee-vertical .2s linear 14;
 }
 
 .marqueeTwo {
-    animation: marquee-vertical .2s linear 15;
+    animation: marquee-vertical .2s linear 16;
 }
 
 .marqueeThree {
-    animation: marquee-vertical .2s linear 17;
+    animation: marquee-vertical .2s linear 18;
 }
 
 @keyframes marquee-vertical {
